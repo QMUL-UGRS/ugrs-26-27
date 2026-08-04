@@ -5,7 +5,7 @@ university: "Queen Mary University of London"
 department: "School of Mathematical Sciences"
 term: "Semester 1 2026"
 schedule_day: "Wednesday"
-schedule_time: &schedule_time "15:00–16:30"
+schedule_time: &schedule_time "15:00–16:00"
 schedule_room: &schedule_room "Mathematical Sciences Building, MB-503"   # ← replace with your actual room
 
 # --- Host-specific settings -------------------------------------------
@@ -23,7 +23,6 @@ baseurl: "/ugrs-26-27"
 # Contact / mailing list — placeholders, see README for what to replace these with
 contact_email: "f.d.gualtieri@qmul.ac.uk"
 mailing_list_url: "https://qmlists.qmul.ac.uk/sympa/subscribe/ug-research-seminar@qmlists.qmul.ac.uk"
-propose_talk_url: "mailto:f.d.gualtieri@qmul.ac.uk?subject=Speaker%20proposal&body=Speaker%20name%3A%0AAffiliation%3A%0ATalk%20title%20(rough)%3A%0AWeeks%20available%3A"
 
 collections:
   talks:

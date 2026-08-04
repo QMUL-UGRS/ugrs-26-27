@@ -4,6 +4,9 @@
 <body>
   {% include header.html %}
   <main class="wrap section page-content">
+    {% if page.placeholder %}
+      <div class="placeholder-banner">Sample listing — this talk hasn't been confirmed with a real speaker yet. It's here to show what a talk page looks like once one is.</div>
+    {% endif %}
     <p style="font-family: var(--font-mono); font-size: 12px; color: var(--stamp); text-transform: uppercase; letter-spacing: .04em;">
       {{ page.date | date: "%-d %B %Y" }} &middot; {{ page.time }} &middot; {{ page.room }}
     </p>

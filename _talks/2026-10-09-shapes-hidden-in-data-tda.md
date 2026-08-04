@@ -1,10 +1,8 @@
 ---
 title: "Shapes Hidden in Data: A Gentle Introduction to Topological Data Analysis"
-speaker: "Prof. Amara Osei"
-affiliation: "Professor of Geometry and Topology, School of Mathematical Sciences"
+speaker: "Speaker TBC"
+placeholder: true
 date: 2026-10-09
-time: "16:00–17:00"
-room: "Mathematical Sciences Building, MB-503"
 abstract: >
   A dataset is a cloud of points — but that cloud often has a shape: loops, voids,
   clusters, connected pieces. Persistent homology gives a way to measure that shape

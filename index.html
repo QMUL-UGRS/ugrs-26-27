@@ -27,9 +27,9 @@ title: Home
       {% assign talk_time = talk.date | date: "%s" %}
       {% if talk_time >= now and shown < 3 %}
         {% assign shown = shown | plus: 1 %}
-        <article class="talk-card">
+        <article class="talk-card{% if talk.placeholder %} is-placeholder{% endif %}">
           <div class="card-top">
-            <span class="callno">{{ site.short_title }}&nbsp;{{ shown | prepend: "00" | slice: -3, 3 }}</span>
+            <span class="callno">{{ site.short_title }}&nbsp;{{ shown | prepend: "00" | slice: -3, 3 }}{% if talk.placeholder %}<span class="placeholder-flag">Sample listing</span>{% endif %}</span>
             <span class="meta">{{ talk.date | date: "%-d %b %Y" }} &middot; {{ talk.time }} &middot; {{ talk.room }}</span>
           </div>
           <h3><a href="{{ talk.url | relative_url }}">{{ talk.title }}</a></h3>
@@ -42,7 +42,7 @@ title: Home
       {% endif %}
     {% endfor %}
     {% if shown == 0 %}
-      <p class="empty-note">No talks scheduled yet for {{ site.term }} — check back soon, or <a href="{{ '/present.html' | relative_url }}">propose one</a>.</p>
+      <p class="empty-note">No talks scheduled yet for {{ site.term }} — check back soon.</p>
     {% endif %}
   </div>
 </section>

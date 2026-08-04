@@ -15,9 +15,9 @@ title: Archive
     {% assign talk_time = talk.date | date: "%s" %}
     {% if talk_time < now %}
       {% assign shown = shown | plus: 1 %}
-      <article class="talk-card is-past">
+      <article class="talk-card is-past{% if talk.placeholder %} is-placeholder{% endif %}">
         <div class="card-top">
-          <span class="callno">ARCHIVED</span>
+          <span class="callno">ARCHIVED{% if talk.placeholder %}<span class="placeholder-flag">Sample listing</span>{% endif %}</span>
           <span class="meta">{{ talk.date | date: "%-d %b %Y" }}</span>
         </div>
         <h3><a href="{{ talk.url | relative_url }}">{{ talk.title }}</a></h3>
@@ -35,3 +35,8 @@ title: Archive
     <p class="empty-note">No past talks yet — this is where the archive will build up once the seminar gets going.</p>
   {% endif %}
 </div>
+
+<p style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-soft); margin-top: 32px;">
+  Looking further back? The full seminar history since 2022 is on
+  <a href="https://www.qmul.ac.uk/maths/undergraduate/ugresearchseminar/ugresearchseminar">QMUL's seminar archive page</a>.
+</p>

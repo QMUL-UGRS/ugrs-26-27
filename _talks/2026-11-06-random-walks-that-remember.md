@@ -1,10 +1,8 @@
 ---
 title: "Random Walks That Remember"
-speaker: "Priya Chandrasekaran"
-affiliation: "PhD Candidate, Probability and Applications Group, School of Mathematical Sciences"
+speaker: "Speaker TBC"
+placeholder: true
 date: 2026-11-06
-time: "16:00–17:00"
-room: "Mathematical Sciences Building, MB-503"
 abstract: >
   Ordinary random walks have no memory — the next step doesn't care where you've
   been. Reinforced random walks do: paths already taken become more (or less)

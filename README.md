@@ -1,7 +1,8 @@
 # Undergraduate Research Seminar in Mathematics — site
 
-A Jekyll site: schedule, archive, "present a talk," about/contact, and a
-mailing-list signup callout. Deploys via GitHub Pages.
+A Jekyll site: schedule, archive, about/contact, and a mailing-list signup
+callout. Deploys via GitHub Pages. Speakers are invited directly by the
+organising committee — there's no public "propose a talk" page.
 
 ## Before you push anywhere: three placeholders to fill in
 
@@ -9,7 +10,6 @@ Open `_config.yml` and replace:
 
 - `contact_email` — the organisers' inbox
 - `mailing_list_url` — see "Setting up the mailing list" below
-- `propose_talk_url` — defaults to a mailto:, fine to leave as-is
 
 ## Setting up the mailing list
 
@@ -49,8 +49,6 @@ title: "Your Talk Title"
 speaker: "Dr. Speaker Name"
 affiliation: "Postdoctoral Researcher, School of Mathematical Sciences"
 date: 2026-12-02
-time: "16:00–17:00"
-room: "Mathematical Sciences Building, MB-503"
 abstract: >
   One or two sentences describing the talk. This is what shows on the
   schedule card and gets truncated — keep the first sentence strong.
@@ -61,6 +59,11 @@ recording: "https://..."  # optional, add once available
 Anything you write below the `---` shows on the talk's own page, under
 the abstract. Optional — leave blank if the front matter is enough.
 ```
+
+`time` and `room` are optional — leave them out and the talk inherits
+`schedule_time`/`schedule_room` from `_config.yml`. Only set them on a
+specific talk if that session runs at a different time or in a different
+room than usual (e.g. a one-off room change).
 
 That's it — it'll automatically appear on the homepage (if it's one of the
 next three upcoming) and on `/schedule.html`, and move itself to
@@ -112,7 +115,6 @@ assets/css/       stylesheet
 index.html        homepage — hero + next 3 talks + signup
 schedule.html     full list of upcoming talks
 archive.html      past talks
-present.md        how to propose a talk
 about.md          organisers/contact
 ```
 
