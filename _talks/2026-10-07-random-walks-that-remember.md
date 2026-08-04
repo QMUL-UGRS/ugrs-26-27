@@ -2,7 +2,7 @@
 title: "Random Walks That Remember"
 speaker: "Speaker TBC"
 placeholder: true
-date: 2026-11-06
+date: 2026-10-07
 abstract: >
   Ordinary random walks have no memory — the next step doesn't care where you've
   been. Reinforced random walks do: paths already taken become more (or less)

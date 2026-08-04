@@ -2,7 +2,7 @@
 title: "Shapes Hidden in Data: A Gentle Introduction to Topological Data Analysis"
 speaker: "Speaker TBC"
 placeholder: true
-date: 2026-10-09
+date: 2026-09-23
 abstract: >
   A dataset is a cloud of points — but that cloud often has a shape: loops, voids,
   clusters, connected pieces. Persistent homology gives a way to measure that shape
