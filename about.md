@@ -5,11 +5,8 @@ title: About
 <div class="page-content" markdown="1">
 
 <h1>About</h1>
-<p class="subhead">{{ site.tagline }}</p>
 
-## What this is
-
-The {{ site.title }} is a termly, student-run seminar at {{ site.university }}'s {{ site.department }}, where mathematics researchers — mostly professors and postdocs, occasionally PhD students — present their work directly to an audience of undergraduates. Speakers are invited by the organising committee. The goal is exposure to what mathematical research actually looks like, pitched at a level any undergraduate can follow — you don't need to be a maths student to come along.
+The {{ site.title }} is a weekly seminar at {{ site.university }}'s {{ site.department }}, organised by PhD students for an audience of undergraduates. Speakers are invited by the organising committee and span the department — PhD students, postdocs, and academic staff — presenting their own research, or a topic they find exciting. The goal is exposure to what mathematical research actually looks like, pitched at a level any undergraduate can follow — you don't need to be a maths student to come along.
 
 ## Organisers
 
