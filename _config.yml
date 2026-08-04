@@ -1,9 +1,12 @@
 title: "Undergraduate Research Seminar in Mathematics"
 short_title: "URSM"
-tagline: "A termly seminar bringing QMUL mathematics researchers — mostly professors and postdocs, occasionally PhD students — to an undergraduate audience."
+tagline: "A weekly seminar bringing cutting-edge QMUL mathematics research to an undergraduate audience."
 university: "Queen Mary University of London"
 department: "School of Mathematical Sciences"
-term: "Autumn 2026"
+term: "Semester 1 2026"
+schedule_day: "Wednesday"
+schedule_time: &schedule_time "15:00–16:30"
+schedule_room: &schedule_room "Mathematical Sciences Building, MB-503"   # ← replace with your actual room
 
 # --- Host-specific settings -------------------------------------------
 # These are the ONLY two lines you should need to touch when you move
@@ -13,14 +16,14 @@ term: "Autumn 2026"
 #   Hosting at a user/org root domain, or a custom domain:  url: "https://your-domain", baseurl: ""
 #   Hosting as a project site (e.g. username.github.io/repo):  url: "https://username.github.io", baseurl: "/repo-name"
 #
-url: ""
-baseurl: ""
+url: "https://flavio-gualtieri.github.io"
+baseurl: "/ugrs-26-27"
 # -----------------------------------------------------------------------
 
 # Contact / mailing list — placeholders, see README for what to replace these with
-contact_email: "ursm-organisers@qmul.ac.uk"
-mailing_list_url: "https://qmlists.qmul.ac.uk/sympa/subscribe/REPLACE-WITH-LIST-NAME"
-propose_talk_url: "mailto:ursm-organisers@qmul.ac.uk?subject=Speaker%20proposal"
+contact_email: "f.d.gualtieri@qmul.ac.uk"
+mailing_list_url: "https://qmlists.qmul.ac.uk/sympa/subscribe/ug-research-seminar@qmlists.qmul.ac.uk"
+propose_talk_url: "mailto:f.d.gualtieri@qmul.ac.uk?subject=Speaker%20proposal&body=Speaker%20name%3A%0AAffiliation%3A%0ATalk%20title%20(rough)%3A%0AWeeks%20available%3A"
 
 collections:
   talks:
@@ -33,6 +36,8 @@ defaults:
       type: "talks"
     values:
       layout: "talk"
+      time: *schedule_time
+      room: *schedule_room
   - scope:
       path: ""
     values:
