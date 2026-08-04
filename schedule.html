@@ -1,0 +1,39 @@
+---
+layout: default
+title: Schedule
+---
+<div class="page-content" style="margin-bottom: 8px;">
+  <h1>Schedule</h1>
+  <p class="subhead">{{ site.term }}. Talks run 20 minutes plus 10 minutes of questions, and are free and open to all undergraduates at {{ site.university }}.</p>
+</div>
+
+{% assign now = site.time | date: "%s" %}
+{% assign all_talks = site.talks | where_exp: "t", "t.date" | sort: "date" %}
+{% assign shown = 0 %}
+<div class="card-grid">
+  {% for talk in all_talks %}
+    {% assign talk_time = talk.date | date: "%s" %}
+    {% if talk_time >= now %}
+      {% assign shown = shown | plus: 1 %}
+      <article class="talk-card">
+        <div class="card-top">
+          <span class="callno">{{ site.short_title }}&nbsp;{{ shown | prepend: "00" | slice: -3, 3 }}</span>
+          <span class="meta">{{ talk.date | date: "%-d %b %Y" }} &middot; {{ talk.time }} &middot; {{ talk.room }}</span>
+        </div>
+        <h3><a href="{{ talk.url | relative_url }}">{{ talk.title }}</a></h3>
+        <p class="speaker"><strong>{{ talk.speaker }}</strong>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
+        <p class="abstract">{{ talk.abstract | truncatewords: 40 }}</p>
+        <div class="perforation">
+          <a href="{{ talk.url | relative_url }}">Details &rarr;</a>
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+  {% if shown == 0 %}
+    <p class="empty-note">Nothing on the schedule yet for {{ site.term }} — <a href="{{ '/present.html' | relative_url }}">propose a talk</a> to fill the first slot.</p>
+  {% endif %}
+</div>
+
+<div class="section" style="padding-bottom:0;">
+  {% include signup.html %}
+</div>

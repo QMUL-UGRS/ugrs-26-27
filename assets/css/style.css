@@ -1,0 +1,289 @@
+/* ---------------------------------------------------------------------
+   Design tokens
+   Concept: the seminar as a card catalog / research log. Each talk is
+   an indexed card; sequential "call numbers" are the throughline motif
+   tying the hero, schedule, and archive together.
+------------------------------------------------------------------------ */
+:root {
+  --paper:      #E9E7DD;
+  --paper-card: #F6F4EC;
+  --ink:        #1F231F;
+  --ink-soft:   #4B5049;
+  --stamp:      #3B4270;   /* ink-stamp indigo — accent */
+  --stamp-soft: #6067A0;
+  --folder:     #8B6F47;   /* manila-folder rust, used sparingly */
+  --line:       #C9C4B4;
+  --radius:     2px;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body:    "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+a { color: var(--stamp); text-decoration-thickness: 1px; }
+a:hover { color: var(--ink); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 2px;
+}
+
+img { max-width: 100%; }
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Header ----------------------------------------------------------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.site-mark {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-mark span { color: var(--stamp); }
+
+nav.site-nav a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  margin-left: 22px;
+}
+nav.site-nav a:first-child { margin-left: 0; }
+nav.site-nav a:hover, nav.site-nav a.active { color: var(--stamp); }
+
+/* --- Hero --------------------------------------------------------------*/
+.hero {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+.hero-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  border: 1px solid var(--stamp);
+  border-radius: var(--radius);
+  padding: 4px 10px;
+  transform: rotate(-1.5deg);
+  margin-bottom: 22px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 18px;
+  max-width: 15ch;
+}
+.hero p.lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin: 0 0 28px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--ink);
+}
+.btn-primary { background: var(--stamp); color: var(--paper-card); border-color: var(--stamp); }
+.btn-primary:hover { background: var(--ink); border-color: var(--ink); color: var(--paper-card); }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { color: var(--stamp); border-color: var(--stamp); }
+
+/* --- Section headings ---------------------------------------------------*/
+.section { padding: 48px 0; }
+.section + .section { border-top: 1px solid var(--line); }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin: 0;
+}
+.section-head .count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* --- Talk / catalog card -------------------------------------------------*/
+.card-grid {
+  display: grid;
+  gap: 18px;
+}
+.talk-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px 16px;
+  position: relative;
+}
+.talk-card .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--stamp);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.talk-card .card-top .callno { font-weight: 600; }
+.talk-card .card-top .meta { color: var(--ink-soft); text-align: right; }
+.talk-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+.talk-card h3 a { color: var(--ink); text-decoration: none; }
+.talk-card h3 a:hover { color: var(--stamp); }
+.talk-card .speaker {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.talk-card .speaker strong { color: var(--ink); font-weight: 600; }
+.talk-card .abstract {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.talk-card .perforation {
+  border-top: 1px dashed var(--line);
+  margin-top: 4px;
+  padding-top: 10px;
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.talk-card .perforation a { text-decoration: none; }
+
+.talk-card.is-past { opacity: 0.82; }
+.talk-card.is-past .card-top { color: var(--folder); }
+
+.empty-note {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+/* --- Generic content page ---------------------------------------------- */
+.page-content h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+.page-content .subhead {
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+.page-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-top: 36px;
+}
+.page-content dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; }
+.page-content dt { font-family: var(--font-mono); font-size: 12px; color: var(--stamp); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 3px; }
+.page-content dd { margin: 0; }
+
+/* --- Mailing list callout ------------------------------------------------*/
+.signup-box {
+  background: var(--ink);
+  color: var(--paper-card);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.signup-box h2 { font-family: var(--font-display); margin: 0 0 6px; font-size: 1.4rem; }
+.signup-box p { margin: 0; color: #C9C7BC; max-width: 46ch; }
+.signup-box .btn-primary { background: var(--paper-card); color: var(--ink); border-color: var(--paper-card); }
+.signup-box .btn-primary:hover { background: var(--stamp-soft); border-color: var(--stamp-soft); color: var(--paper-card); }
+
+/* --- Footer ------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0 40px;
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.site-footer a { color: var(--ink-soft); }
+.site-footer a:hover { color: var(--stamp); }
+
+/* --- Responsive ----------------------------------------------------------*/
+@media (min-width: 640px) {
+  .card-grid.two-col { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .talk-card .card-top { flex-direction: column; gap: 4px; }
+  .talk-card .card-top .meta { text-align: left; }
+  .signup-box { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

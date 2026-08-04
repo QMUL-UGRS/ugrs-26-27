@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  {% include header.html %}
+  <main class="wrap section page-content">
+    <p style="font-family: var(--font-mono); font-size: 12px; color: var(--stamp); text-transform: uppercase; letter-spacing: .04em;">
+      {{ page.date | date: "%-d %B %Y" }} &middot; {{ page.time }} &middot; {{ page.room }}
+    </p>
+    <h1>{{ page.title }}</h1>
+    <p class="subhead"><strong>{{ page.speaker }}</strong>{% if page.affiliation %}, {{ page.affiliation }}{% endif %}</p>
+
+    <div>{{ content }}</div>
+
+    {% if page.abstract %}
+      <h2>Abstract</h2>
+      <p>{{ page.abstract }}</p>
+    {% endif %}
+
+    {% if page.slides or page.recording %}
+      <h2>Materials</h2>
+      <p>
+        {% if page.slides %}<a href="{{ page.slides }}">Slides</a>{% endif %}
+        {% if page.slides and page.recording %} &middot; {% endif %}
+        {% if page.recording %}<a href="{{ page.recording }}">Recording</a>{% endif %}
+      </p>
+    {% endif %}
+
+    <p style="margin-top:40px;"><a href="{{ '/schedule.html' | relative_url }}">&larr; Back to schedule</a></p>
+  </main>
+  {% include footer.html %}
+</body>
+</html>

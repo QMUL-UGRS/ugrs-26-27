@@ -1,0 +1,52 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <span class="hero-badge">{{ site.term }} &middot; No. 001</span>
+  <h1>{{ site.title }}</h1>
+  <p class="lede">{{ site.tagline }} Free and open to all undergraduates at {{ site.university }} — no background in the topic required, just curiosity.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="{{ site.mailing_list_url }}">Join the mailing list</a>
+    <a class="btn btn-ghost" href="{{ '/schedule.html' | relative_url }}">View the schedule</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Coming up</h2>
+    <span class="count"><a href="{{ '/schedule.html' | relative_url }}">full schedule &rarr;</a></span>
+  </div>
+
+  {% assign now = site.time | date: "%s" %}
+  {% assign upcoming = site.talks | where_exp: "t", "t.date" %}
+  {% assign upcoming_sorted = upcoming | sort: "date" %}
+  {% assign shown = 0 %}
+  <div class="card-grid">
+    {% for talk in upcoming_sorted %}
+      {% assign talk_time = talk.date | date: "%s" %}
+      {% if talk_time >= now and shown < 3 %}
+        {% assign shown = shown | plus: 1 %}
+        <article class="talk-card">
+          <div class="card-top">
+            <span class="callno">{{ site.short_title }}&nbsp;{{ shown | prepend: "00" | slice: -3, 3 }}</span>
+            <span class="meta">{{ talk.date | date: "%-d %b %Y" }} &middot; {{ talk.time }} &middot; {{ talk.room }}</span>
+          </div>
+          <h3><a href="{{ talk.url | relative_url }}">{{ talk.title }}</a></h3>
+          <p class="speaker"><strong>{{ talk.speaker }}</strong>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
+          <p class="abstract">{{ talk.abstract | truncatewords: 32 }}</p>
+          <div class="perforation">
+            <a href="{{ talk.url | relative_url }}">Details &rarr;</a>
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+    {% if shown == 0 %}
+      <p class="empty-note">No talks scheduled yet for {{ site.term }} — check back soon, or <a href="{{ '/present.html' | relative_url }}">propose one</a>.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section">
+  {% include signup.html %}
+</section>

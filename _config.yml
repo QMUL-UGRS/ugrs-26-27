@@ -1,0 +1,50 @@
+title: "Undergraduate Research Seminar in Mathematics"
+short_title: "URSM"
+tagline: "A termly seminar bringing QMUL mathematics researchers — mostly professors and postdocs, occasionally PhD students — to an undergraduate audience."
+university: "Queen Mary University of London"
+department: "School of Mathematical Sciences"
+term: "Autumn 2026"
+
+# --- Host-specific settings -------------------------------------------
+# These are the ONLY two lines you should need to touch when you move
+# hosts (e.g. from a personal GitHub.com Pages site to QMUL's GitHub
+# Enterprise instance, or vice versa).
+#
+#   Hosting at a user/org root domain, or a custom domain:  url: "https://your-domain", baseurl: ""
+#   Hosting as a project site (e.g. username.github.io/repo):  url: "https://username.github.io", baseurl: "/repo-name"
+#
+url: ""
+baseurl: ""
+# -----------------------------------------------------------------------
+
+# Contact / mailing list — placeholders, see README for what to replace these with
+contact_email: "ursm-organisers@qmul.ac.uk"
+mailing_list_url: "https://qmlists.qmul.ac.uk/sympa/subscribe/REPLACE-WITH-LIST-NAME"
+propose_talk_url: "mailto:ursm-organisers@qmul.ac.uk?subject=Speaker%20proposal"
+
+collections:
+  talks:
+    output: true
+    permalink: /talks/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "talks"
+    values:
+      layout: "talk"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

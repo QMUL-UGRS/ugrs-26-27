@@ -1,0 +1,37 @@
+---
+layout: default
+title: Archive
+---
+<div class="page-content" style="margin-bottom: 8px;">
+  <h1>Archive</h1>
+  <p class="subhead">Past talks, with slides and recordings where the speaker made them available.</p>
+</div>
+
+{% assign now = site.time | date: "%s" %}
+{% assign past_talks = site.talks | where_exp: "t", "t.date" | sort: "date" | reverse %}
+{% assign shown = 0 %}
+<div class="card-grid">
+  {% for talk in past_talks %}
+    {% assign talk_time = talk.date | date: "%s" %}
+    {% if talk_time < now %}
+      {% assign shown = shown | plus: 1 %}
+      <article class="talk-card is-past">
+        <div class="card-top">
+          <span class="callno">ARCHIVED</span>
+          <span class="meta">{{ talk.date | date: "%-d %b %Y" }}</span>
+        </div>
+        <h3><a href="{{ talk.url | relative_url }}">{{ talk.title }}</a></h3>
+        <p class="speaker"><strong>{{ talk.speaker }}</strong>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
+        <p class="abstract">{{ talk.abstract | truncatewords: 30 }}</p>
+        <div class="perforation">
+          <a href="{{ talk.url | relative_url }}">Details &rarr;</a>
+          {% if talk.slides %}<a href="{{ talk.slides }}">Slides</a>{% endif %}
+          {% if talk.recording %}<a href="{{ talk.recording }}">Recording</a>{% endif %}
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+  {% if shown == 0 %}
+    <p class="empty-note">No past talks yet — this is where the archive will build up once the seminar gets going.</p>
+  {% endif %}
+</div>
