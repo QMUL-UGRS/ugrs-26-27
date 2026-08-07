@@ -280,6 +280,72 @@ nav.site-nav a:hover, nav.site-nav a.active { color: var(--stamp); }
 .page-content dt { font-family: var(--font-mono); font-size: 12px; color: var(--stamp); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 3px; }
 .page-content dd { margin: 0; }
 
+/* --- Organiser cards -----------------------------------------------------
+   Sourced from the `organisers` collection (output: false) — one card per
+   file in _organisers/, photo optional (see assets/images/organisers/).
+---------------------------------------------------------------------------*/
+.organiser-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 640px) {
+  .organiser-grid { grid-template-columns: 1fr 1fr; }
+}
+.organiser-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.organiser-photo {
+  position: relative;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--stamp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.organiser-initials {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--paper-card);
+}
+.organiser-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.organiser-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 2px;
+}
+.organiser-role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--stamp);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+.organiser-bio {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.organiser-bio p:last-child { margin-bottom: 0; }
+
 /* --- Mailing list callout ------------------------------------------------*/
 .signup-box {
   background: var(--ink);

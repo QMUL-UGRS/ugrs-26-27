@@ -1,0 +1,42 @@
+---
+layout: default
+title: About
+---
+<div class="page-content" style="margin-bottom: 8px;">
+  <h1>About</h1>
+  <p class="subhead">The {{ site.title }} is a weekly student-run seminar at {{ site.university }}'s {{ site.department }}, where mathematics researchers present their work directly to an audience of undergraduates. Speakers are invited by the organising committee. The goal is exposure to what mathematical research actually looks like, pitched at a level any undergraduate can follow — you don't need to be a maths student to come along.</p>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-head">
+    <h2>Organisers</h2>
+  </div>
+
+  {% assign organisers = site.organisers | sort: "order" %}
+  <div class="organiser-grid">
+    {% for organiser in organisers %}
+      {% assign slug = organiser.path | split: "/" | last | remove: ".md" %}
+      {% assign name_parts = organiser.name | split: " " %}
+      {% assign first_initial = name_parts.first | slice: 0, 1 %}
+      {% assign last_initial = "" %}
+      {% if name_parts.size > 1 %}{% assign last_initial = name_parts.last | slice: 0, 1 %}{% endif %}
+      {% assign initials = first_initial | append: last_initial %}
+      <article class="organiser-card">
+        <div class="organiser-photo">
+          <span class="organiser-initials">{{ initials }}</span>
+          <img src="{{ '/assets/images/organisers/' | append: slug | append: '.jpg' | relative_url }}" alt="" loading="lazy" onerror="this.remove()">
+        </div>
+        <div class="organiser-info">
+          <h3>{{ organiser.name }}</h3>
+          {% if organiser.role %}<p class="organiser-role">{{ organiser.role }}</p>{% endif %}
+          <div class="organiser-bio">{{ organiser.content | markdownify }}</div>
+        </div>
+      </article>
+    {% endfor %}
+    {% if organisers.size == 0 %}
+      <p class="empty-note">No organisers listed yet.</p>
+    {% endif %}
+  </div>
+
+  <p style="margin-top:28px;">Questions, feedback, or anything else — <a href="{{ site.contact_email | prepend: 'mailto:' }}">email the organisers</a> directly. For a weekly heads-up on that week's speaker, title, and room, <a href="{{ site.mailing_list_url }}">join the mailing list</a>; it's one email a week during term.</p>
+</div>

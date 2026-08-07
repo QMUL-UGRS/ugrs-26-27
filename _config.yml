@@ -28,6 +28,8 @@ collections:
   talks:
     output: true
     permalink: /talks/:path/
+  organisers:
+    output: false   # data only — rendered into cards on about.html, no individual pages
 
 defaults:
   - scope:

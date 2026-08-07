@@ -70,6 +70,31 @@ next three upcoming) and on `/schedule.html`, and move itself to
 `/archive.html` once the date passes. No need to manually move files
 between "upcoming" and "past."
 
+## Adding an organiser
+
+Add a new file to `_organisers/`, named `firstname-lastname.md` (this exact
+name is also the photo-matching key, see below):
+
+```yaml
+---
+name: "Jane Doe"
+role: "PhD Student, School of Mathematical Sciences"
+order: 2   # controls left-to-right/top-to-bottom position on the about page
+---
+
+A couple of sentences of bio — what they study, what they're interested in.
+This is markdown and becomes the card's blurb on the about page.
+```
+
+To add a photo, drop a JPEG at `assets/images/organisers/firstname-lastname.jpg`
+— same basename as the markdown file, no front matter needed to wire it up.
+No photo yet? Leave it out; the card falls back to an initials monogram
+until one's added.
+
+That's it — the about page picks up every file in `_organisers/`
+automatically, sorted by `order`. To remove someone, delete their file (and
+photo, if any).
+
 ## Deploying — starting on your own GitHub account
 
 1. Push this repo to a new repository on `github.com` (personal account or
@@ -109,13 +134,15 @@ remotes — if you want to test the QMUL instance before fully switching over.
 ```
 _config.yml       site-wide settings — title, term, mailing list URL
 _talks/           one file per talk (see "Adding a talk" above)
+_organisers/      one file per organiser (see "Adding an organiser" above)
 _layouts/         default.html (all pages), talk.html (individual talk pages)
 _includes/        header, footer, <head>, mailing-list signup box
 assets/css/       stylesheet
+assets/images/organisers/  organiser photos, matched by filename
 index.html        homepage — hero + next 3 talks + signup
 schedule.html     full list of upcoming talks
 archive.html      past talks
-about.md          organisers/contact
+about.html        blurb + organiser cards + contact
 ```
 
 ## Possible future additions
