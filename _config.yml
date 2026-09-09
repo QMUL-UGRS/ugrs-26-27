@@ -18,8 +18,8 @@ official_url: "https://www.qmul.ac.uk/maths/undergraduate/ugresearchseminar/ugre
 #   Hosting at a user/org root domain, or a custom domain:  url: "https://your-domain", baseurl: ""
 #   Hosting as a project site (e.g. username.github.io/repo):  url: "https://username.github.io", baseurl: "/repo-name"
 #
-url: "https://qmul-ursm.github.io"
-baseurl: "/ursm-26-27"
+url: "https://qmul-ugrs.github.io"
+baseurl: "/ugrs-26-27"
 # -----------------------------------------------------------------------
 
 # Contact / mailing list — placeholders, see README for what to replace these with
