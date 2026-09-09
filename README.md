@@ -79,7 +79,6 @@ name is also the photo-matching key, see below):
 ---
 name: "Jane Doe"
 role: "PhD Student, School of Mathematical Sciences"
-order: 2   # controls left-to-right/top-to-bottom position on the about page
 ---
 
 A couple of sentences of bio — what they study, what they're interested in.
@@ -92,8 +91,8 @@ No photo yet? Leave it out; the card falls back to an initials monogram
 until one's added.
 
 That's it — the about page picks up every file in `_organisers/`
-automatically, sorted by `order`. To remove someone, delete their file (and
-photo, if any).
+automatically, sorted alphabetically by `name`. To remove someone, delete
+their file (and photo, if any).
 
 ## Deploying — starting on your own GitHub account
 

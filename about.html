@@ -4,7 +4,7 @@ title: About
 ---
 <div class="page-content" style="margin-bottom: 8px;">
   <h1>About</h1>
-  <p class="subhead">The {{ site.title }} is a weekly student-run seminar at {{ site.university }}'s {{ site.department }}, where mathematics researchers present their work directly to an audience of undergraduates. Speakers are invited by the organising committee. The goal is exposure to what mathematical research actually looks like, pitched at a level any undergraduate can follow — you don't need to be a maths student to come along.</p>
+  <p class="subhead">The {{ site.title }} is a weekly student-run seminar at {{ site.university }}'s {{ site.department }}, where mathematics researchers present their work directly to an audience of undergraduates. Speakers are invited by the organising committee. The goal is exposure to what mathematical research actually looks like, pitched at a level any undergraduate can follow — you don't need to be a maths student to come along. It meets in the {{ site.venue_address }}. See the <a href="{{ site.official_url }}">official seminar page</a> at QMUL for more.</p>
 </div>
 
 <div class="section" style="padding-top:0;">
@@ -12,7 +12,7 @@ title: About
     <h2>Organisers</h2>
   </div>
 
-  {% assign organisers = site.organisers | sort: "order" %}
+  {% assign organisers = site.organisers | sort: "name" %}
   <div class="organiser-grid">
     {% for organiser in organisers %}
       {% assign slug = organiser.path | split: "/" | last | remove: ".md" %}
@@ -38,5 +38,5 @@ title: About
     {% endif %}
   </div>
 
-  <p style="margin-top:28px;">Questions, feedback, or anything else — <a href="{{ site.contact_email | prepend: 'mailto:' }}">email the organisers</a> directly. For a weekly heads-up on that week's speaker, title, and room, <a href="{{ site.mailing_list_url }}">join the mailing list</a>; it's one email a week during term.</p>
+  <p style="margin-top:28px;">Questions, feedback, or anything else — <a href="{{ site.contact_email | prepend: 'mailto:' }}">email the organisers</a> directly. For a weekly heads-up on that week's speaker and seminar title, <a href="{{ site.mailing_list_url }}">join the mailing list</a>; it's one email a week during term.</p>
 </div>
