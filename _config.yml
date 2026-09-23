@@ -4,10 +4,10 @@ tagline: "A weekly seminar bringing cutting-edge QMUL mathematics research to an
 university: "Queen Mary University of London"
 department: "School of Mathematical Sciences"
 term: "Semester 1 2026"
-schedule_day: "Wednesday"
-schedule_time: &schedule_time "15:00–16:00"
-schedule_room: &schedule_room "Seminar Room, School of Mathematical Sciences (MB-503)"   # ← replace with your actual room
-venue_address: "Seminar Room, 5th floor, School of Mathematical Sciences (MB-503), Queen Mary University of London, Mile End Rd, London E1 4NS"
+schedule_day: "Friday"
+schedule_time: &schedule_time "16:00–17:30"
+schedule_room: &schedule_room "Mathematical Sciences Building, MB-203"
+venue_address: "Room MB-203, 2nd floor, School of Mathematical Sciences, Queen Mary University of London, Mile End Rd, London E1 4NS"
 official_url: "https://www.qmul.ac.uk/maths/undergraduate/ugresearchseminar/ugresearchseminar"
 
 # --- Host-specific settings -------------------------------------------
