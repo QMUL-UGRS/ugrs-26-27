@@ -13,18 +13,17 @@ Open `_config.yml` and replace:
 
 ## Setting up the mailing list
 
-GitHub Pages is static — it can't collect signups itself, so this needs an
-external service. Pick one:
+GitHub Pages is static — it can't collect signups itself, so sign-ups go
+through a Microsoft Form (QMUL login required, so QMUL students only). The
+form just collects email addresses; it does not subscribe anyone automatically.
 
-- **JISCMail** — the standard UK academic mailing list service. Worth
-  checking if QMUL already has infrastructure/precedent for this.
-- **Google Group** — simplest to set up, `mailing_list_url` just points at
-  the group's join page.
-- **Google Form → Mailchimp/Buttondown** — more control over onboarding
-  emails and unsubscribes, more setup.
-
-Whichever you pick, `mailing_list_url` in `_config.yml` is the only place
-you need to point at it — it's used on the homepage and schedule page.
+- Responses: open the form at forms.office.com → **Responses** (or **Open in
+  Excel**). Turn on "Notify me when new responses are submitted" there.
+- Add each new address to the mailing list by hand (e.g. Sympa → Admin →
+  Subscribers → Add).
+- If you ever recreate the form, paste the new link into `mailing_list_url`
+  in `_config.yml` — it's the only place that needs changing (homepage,
+  signup box, About page and footer all use it).
 
 ## Running it locally
 

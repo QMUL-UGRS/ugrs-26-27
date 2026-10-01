@@ -22,9 +22,13 @@ url: "https://qmul-ugrs.github.io"
 baseurl: "/ugrs-26-27"
 # -----------------------------------------------------------------------
 
-# Contact / mailing list — placeholders, see README for what to replace these with
+# Contact / mailing list
 contact_email: "a.a.a.zaid@qmul.ac.uk"
-mailing_list_url: "https://qmlists.qmul.ac.uk/sympa/subscribe/ug-research-seminar@qmlists.qmul.ac.uk"
+# Microsoft Form (QMUL login required) — people enter their email, organisers add them manually.
+mailing_list_url: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=kfCdVhOw40CG7r2cueJYFFIK5k7pY0JFiVaznBALPJtUREwzS0dWS1ZNOE9EME5OUFRKSklMUzJHRC4u"
+
+# Build pages for talks dated in the future (otherwise upcoming talks are listed but 404)
+future: true
 
 collections:
   talks:
