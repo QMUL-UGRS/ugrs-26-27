@@ -1,17 +1,14 @@
 ---
-title: "Topological Data Analysis: The Shape of Data"
+title: "Topological Data Analysis: revealing the hidden shape of data"
 speaker: "Flavio Gualtieri"
 affiliation: "PhD student, Queen Mary University of London"
 date: 2026-10-02
-abstract: >
-  Data has a shape. Not a plot, not a summary statistic — an actual shape, with
-  loops, holes and voids that survive noise and refuse to go away. Topological
-  data analysis is the machinery for measuring it, and this talk builds that
-  machinery from nothing: no topology required, just a willingness to look at a
-  cloud of points and ask what it looks like. Flavio then turns the tools loose on
-  his own research, feeding topological features into deep learning models to do
-  parameter inference for stochastic point processes — the mathematics of events
-  that arrive in bursts, from earthquake aftershocks to neuron spikes.
+abstract: |
+  Data has shape, even when it’s seemingly disordered and difficult to discern, and this shape can reveal all sorts of useful information and properties. Topological Data Analysis (TDA) is a young and rapidly growing field that uses ideas from algebraic topology to uncover the structure hidden in complex datasets.
+
+  How do you count the holes in a cloud of discrete points? In this talk we will build the central tool of TDA, persistent homology, from scratch. Starting with nothing more than points and distances, we will see how we can study loops, voids, and clusters that traditional statistics miss, and how these features can be fed into machine learning models.
+
+  We use these tools to probe how neural networks learn and study the geometry of the high-dimensional embeddings behind modern AI. No background in topology is required, just curiosity and a willingness to think a little differently about what data is.
 tags: [topology, tda, machine-learning, probability]
 ---
 
