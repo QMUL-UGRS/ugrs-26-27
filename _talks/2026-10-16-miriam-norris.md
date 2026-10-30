@@ -1,19 +1,18 @@
 ---
-title: "Title to be announced"
+title: "Juggling Patterns and Their Connections to Abstract Mathematics"
 speaker: "Dr Miriam Norris"
 affiliation: "Senior Heilbronn Research Fellow, Queen Mary University of London"
 abstract: >
-  Miriam Norris is an algebraist working in representation theory, where groups of
-  symmetries are studied by turning them into matrices. Her work sits in the
-  awkward and interesting case of positive characteristic, where the classical
-  answers — such as the Littlewood–Richardson rule for breaking a tensor product
-  into its irreducible pieces — stop working, and asks what replaces them. She
-  completed her PhD in the London School of Geometry and Number Theory, spent a
-  postdoc in Manchester, and returned to London in October 2025 on a Heilbronn
-  Fellowship, where she now works on the representation theory behind the Langlands
-  programme and helps run QMUL's Algebra and Number Theory seminar.
+  In this talk, we will consider mathematical models of juggling. The key idea is
+  to take snapshots of the juggling at discrete points in time and record the
+  heights of the balls. Between snapshots, each ball falls by one unit. As soon as
+  a ball lands in our hand, we throw it back into the air to some height, and the
+  game continues. This model of juggling, along with more advanced models that, for
+  example, allow balls to be dropped, is connected to combinatorics, specifically
+  to vector partitions. Perhaps more surprisingly, juggling sequences are also
+  connected to an even more abstract area of algebra: Lie theory. We will discuss
+  juggling, combinatorics, and Lie theory, and explore a connection among all
+  three.
 date: 2026-10-16
-tags: [algebra, representation-theory]
+tags: [algebra, combinatorics, lie-theory]
 ---
-
-Talk title and abstract to follow.
